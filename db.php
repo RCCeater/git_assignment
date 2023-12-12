@@ -1,27 +1,13 @@
 <?php
 
-$db = mysqli_connect('localhost','root','1234','level1');
+	header('Content-Type: text/html; charset=utf-8'); // utf-8인코딩
 
-if($db)
-{
-  echo 'DB 접속 실패';
-}
-else
-{
-  echo 'DB 접속 성공';
-}
+	$db = new mysqli("localhost","root","1234","bbs"); 
+	$db->set_charset("utf8");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+	function mq($sql)
+	{
+		global $db;
+		return $db->query($sql);
+	}
 ?>
